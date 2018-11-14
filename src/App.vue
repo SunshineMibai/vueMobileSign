@@ -55,7 +55,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
          },
          Canvas_goBack(){
-            this.canvas.Url = this.ImgSrc
+            console.log(this.ImgSrc)
          }
       }
    }  
