@@ -10,17 +10,12 @@
    </div>
 </template>
 <script>
-   import {mapState,mapMutations} from 'vuex'
-   import store from '@/vuex/canvas/canvas_object.js'
    export default {
       data() {
          return {
             ImgSrc:''
          }
       },
-      computed:{
-         ...mapState(['canvas'])
-      },store,
       mounted(){
          let canvas = document.getElementById('can_vans')
          let ctx = canvas.getContext('2d');
@@ -45,7 +40,6 @@
          });
       },
       methods:{
-         ...mapMutations(['Setcanvas']),
          Output(){
             let canvas = document.getElementById('can_vans')
             let ctx = canvas.getContext('2d')
@@ -60,8 +54,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
          },
          Canvas_goBack(){
-            this.canvas.Url = this.ImgSrc
-            this.Setcanvas(this.canvas)
+            console.log(this.ImgSrc)
          }
       }
    }  
